@@ -1,0 +1,120 @@
+---
+title: "Stat 343: Mathematical Statistics"
+author: "Evan L. Ray"
+date: ""
+output: ioslides_presentation
+---
+
+<style>
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+require(ggplot2)
+require(dplyr)
+require(tidyr)
+require(readr)
+```
+
+## Cancer at the Slater School
+
+The Slater school is an elementary school in Fresno, California where teachers and staff were "concerned about the presence of two high-voltage transmission lines that ran past the school ..."  They were particularly concerned about possibly increased cancer rates: out of 145 teachers, teachers' aides, and staff, 8 developed invasive cancer.
+
+ * Public health questions:
+    * What can we say about the risk of cancer among employees at the Slater school?
+    * Is this risk higher than the risk among similar people nationwide?
+
+ * Example discussed in Brodeur (1992) and Lavine (1999)
+
+## A Basic Analysis (see Intro Stat)
+
+* Let $X$ = number of teachers and staff who become sick.
+* Model $X \sim \text{Binomial}(145, p)$
+* Point estimate for $p$:
+    $$\widehat{p} = \frac{8}{145} \approx 0.055$$
+* A 95\% Confidence Interval for $p$:
+    $$\left[\widehat{p} - 1.96 \sqrt{\frac{\widehat{p} (1 - \widehat{p})}{n}}, \widehat{p} + 1.96 \sqrt{\frac{\widehat{p} (1 - \widehat{p})}{n}}\right]$$
+$$[0.018, 0.092]$$
+
+
+## Three More Methods
+
+* All based on the same Binomial model
+
+```{r, echo = FALSE, message = FALSE, fig.height = 4, fig.width = 8}
+library(mosaic)
+library(ggplot2)
+
+ex_d <- data.frame(
+  cancer = factor(c(
+      rep("yes", 8),
+      rep("no", 137)
+    ),
+    levels = c("no", "yes"))
+)
+
+temp <- binom.test(ex_d$cancer, success = "yes")
+exact_pt <- temp$estimate
+exact_ci_lb <- temp$conf.int[1]
+exact_ci_ub <- temp$conf.int[2]
+
+temp <- binom.test(ex_d$cancer, success = "yes", ci.method = "Wald")
+wald_pt <- temp$estimate
+wald_ci_lb <- temp$conf.int[1]
+wald_ci_ub <- temp$conf.int[2]
+
+## bayes
+alpha <- 0.5 + 8
+beta <- 0.5 + 137
+
+bayes_pt <- alpha / (alpha + beta)
+bayes_ci_lb <- qbeta(0.025, shape1 = alpha, shape2 = beta)
+bayes_ci_ub <- qbeta(0.975, shape1 = alpha, shape2 = beta)
+
+## bootstrap
+
+bs_phats <- sapply(seq_len(10000),
+  function(i) {
+    tc <- base::sample(ex_d$cancer, size = 145, replace = TRUE)
+    mean(tc == "yes")
+  })
+
+bs_pt <- mean(bs_phats)
+bs_ci_lb <- quantile(bs_phats, probs = 0.025, names = FALSE)
+bs_ci_ub <- quantile(bs_phats, probs = 0.975, names = FALSE)
+
+
+est_df <- data.frame(
+  Method = c("Clopper-Pearson", "Wald", "Bayes (Jeffreys Prior)", "Bootstrap"),
+  point_est = c(exact_pt, wald_pt, bayes_pt, bs_pt),
+  ci_lb = c(exact_ci_lb, wald_ci_lb, bayes_ci_lb, bs_ci_lb),
+  ci_ub = c(exact_ci_ub, wald_ci_ub, bayes_ci_ub, bs_ci_ub)
+)
+
+ggplot() +
+  geom_point(mapping = aes(y = Method, x = point_est, colour = Method), data = est_df) +
+  geom_errorbarh(mapping = aes(x = point_est, xmin = ci_lb, xmax = ci_ub, y = Method, colour = Method), data = est_df) +
+  xlab("Point and 95% Interval Estimates of p") +
+  ylab("Method") +
+  theme_bw(base_size = 16)
+```
+
+## Comparing These Approaches
+
+* In Stat 343 we will discuss:
+    * Common methods for deriving estimators for model parameters
+    * Common methods for estimating uncertainty in our parameter estimates
+    * Asymptotic Results
+        * As $n$ increases, do the estimates converge to the true values?
+        * As $n$ increases, some methods have "optimal" performance -- in what sense?
+    * If sample sizes are small, are some methods more reliable than others?
