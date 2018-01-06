@@ -1,0 +1,5 @@
+name: "elr-website"
+output:
+  html_document:
+    theme: paper
+output_dir: "."
