@@ -4,7 +4,7 @@ title: "Evan L. Ray"
 
 ## About
 
-I am an assistant professor of statistics in the department of mathematics and statistics at [Mount Holyoke College](https://www.mtholyoke.edu).  I completed my PhD in statistics at the University of Massachusetts, Amherst.  In my dissertation, I developed methods to classify physical activity using accelerometer data.  As a postdoctoral research associate in the department of biostatistics and epidemiology at the University of Massachusetts, Amherst, I developed methods for predicting the timing and severity of the spread of infectious disease.  I still work closely with the [Reich Lab](http://reichlab.io/).
+I am an assistant professor of statistics in the [department of mathematics and statistics](https://www.mtholyoke.edu/acad/math) at [Mount Holyoke College](https://www.mtholyoke.edu).  I completed my PhD in statistics at the University of Massachusetts, Amherst.  In various research projects, I have developed methods to classify physical activity using accelerometer data and developed semi-parametric and ensemble models for predicting the timing and severity of the spread of infectious disease.  I work closely with the [Reich Lab](http://reichlab.io/) in the Department of Biostatistics and Epidemiology at the University of Massachusetts, Amherst.
 
 ## Teaching
 
