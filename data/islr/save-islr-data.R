@@ -1,4 +1,4 @@
 library(readr)
-library(MASS)
+library(ISLR)
 
-write_csv(Boston, "data/mass/Boston.csv")
+write_csv(Carseats, "data/islr/Carseats.csv")
