@@ -1,0 +1,34 @@
+Data on Leave Requests to Appeal Rejection of Refugee Claims
+
+[1] Case ID (Note: not consecutive)
+
+[2] Name of Judge Hearing Case
+
+[3] Nation of Origin of Claimant
+
+[4] Judgment of Independent Experiment
+    no  = case has no merit
+	yes = case has some merit (leave to appeal should be granted)
+
+[5] Judge's Decision
+    no  = leave to appeal not granted
+	yes = leave to appeal granted
+
+[6] Language of Case
+    English
+	French
+
+[7] Location of Original Refugee Claim
+    Montreal
+	Toronto
+	other
+
+[8] Logit of Success Rate, for all cases from the applicant's nation
+
+[9] Batch Number: Batch of cases assigned as a group to one judge
+    [Note: This information is temporarily unavailable; the dataset
+	will be updated when the information is recovered.]
+
+
+Source of Data: Personal communication from Ian Greene, Department of
+Political Science, York University.
