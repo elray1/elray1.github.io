@@ -3,3 +3,11 @@ output:
   html_document:
     theme: paper
 output_dir: "."
+navbar:
+  type: default
+  title: "Evan L. Ray"
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Recommendations"
+      href: recommendations.html
