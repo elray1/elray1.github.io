@@ -1,0 +1,154 @@
+---
+title: "Research"
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+---
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+### Introduction
+
+My research so far has tended to fall near the machine learning end of statistics; I have primarily focused on methods for prediction and classification in time series data.  In research related to infectious disease prediction, I work closely with the [Reich Lab](http://reichlab.io/) in the Department of Biostatistics and Epidemiology at the University of Massachusetts, Amherst.
+
+Below, I'll sketch a few ideas for research projects that are suitable for students at Mount Holyoke, broken down by topic area.  All of these are "real" research projects in the sense that they have the potential to result in a publishable article.  As with all research projects I have engaged in, these ideas are also a bit risky: there is the potential that the original concept for the project won't "work" (that's why it's research - we don't yet know for sure what the results will be).  Resilience and determination will be required to see the project through to the end.
+
+If you are interested in conducting research on one of these topics, get in touch with me.  We can have a conversation about your career goals and level of preparation, and go from there.
+
+### SARIMA Models for Infectious Disease
+
+[**S**easonal **A**uto**r**egressive **I**ntegrated **M**oving **A**verage](https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average) (SARIMA) models are the most common model for time series data with regular seasonal trends.  An example of time seris data with seasonal patterns is measurements of the incidence of influenza over time in the US: incidence regularly reaches a low point during the summer months and then peaks during the winter months.  Despite their common use, there are still many unexplored ideas for working with SARIMA models.  All of the ideas below involve inference for SARIMA models in the Bayesian framework.  It would also be possible to take some of the ideas below and apply them to other common models for infectious disease, like the HHH4 model.
+
+#### Informative prior for seasonality
+
+Roughly, the parameters of a SARIMA model specify a relationship between disease incidence at past times and disease incidence at the current time.  A simplified version of a SARIMA model (specifically, this is an AR(p) model) is as below:
+
+\begin{equation}
+Y_{t} = \alpha_1 Y_{t-1} + \alpha_2 Y_{t-2} + \cdots + \alpha_L Y_{t-p} + \varepsilon_t \label{eqn:AR_p}
+\end{equation}
+
+Here, the disease incidence at time $t$, $Y_t$, depends on the disease incidence over the past $p$ times.  Certain sets of values for the parameters $\alpha_1, \ldots, \alpha_p$ will result in the seasonal up-and-down behavior we expect to represent a seasonal time series process.
+
+If we have enough data and we specify the model structure well, it will often be possible to learn the seasonal structure of the time series from the observed data.  However, I have observed that sometimes automatic model selection strategies can fail to correctly find the seasonal structure in time series.
+
+The basic idea for this project is to perform inference for the model parameters in the Bayesian framework, specifying a prior distribution for the coefficients $\alpha_1, \ldots, \alpha_p$ in a Bayesian analysis that encourages the correct seasonal behavior.  This should be possible because there is a known relationship between the values of the coefficients and the frequency of the up-and-down cycles that would be most noticeable in time series generated from a model with those coefficient values.  Some references to get started with are [here](https://en.wikipedia.org/wiki/Spectral_density_estimation#Parametric_estimation).
+
+Application areas:
+
+This could definitely be applied to a data set like influenza in the United States, but could likely also be applied to other seasonal or periodic time series data.
+
+Prerequisites:
+
+ * Basic knowledge of R or Python
+ * Multiple regression at the level of Stat 242
+ * Calculus 3
+ * Either exposure to Bayesian methods, or probability
+ * Perseverance
+
+#### Predictive SARIMA models via approximate Bayesian computation (ABC)
+
+A common goal when fitting SARIMA models is to use them for making medium-to-long term predictions.  However, the most common way of setting up the model structure and performing inference for the model parameters is tuned to short term predictions.  The basic goal for this project is to explore whether we can improve medium-to-long term predictions from SARIMA models by directly using measures of medium-to-long term predictive performance during the parameter estimation process.
+
+ARIMA and SARIMA models are most often specified in a one-step-ahead fashion; for example, Equation (1) says that the time series value at time $t$ depends on the time series value at time $t-1$ (as well as previous lags).  As a result of this model structure, the model likelihood basically measures the quality of one-step-ahead predictions (if I have observed the data up through time $t-1$, how well can I predict the data at time $t$).  Estimation of the parameters in both the frequentist and Bayesian frameworks is based on the likelihood function, and so the most common approaches to parameter estimation are basically optimizing the performance of one-step-ahead predictions.  I conjecture that changing the parameter estimation strategy to optimize performance of medium-to-long term predictions could improve predictive performance for many common use cases.
+
+[Approximate Bayesian computation](https://en.wikipedia.org/wiki/Approximate_Bayesian_computation) (ABC) is an approach to inference in the Bayesian framework that was originally developed for the setting where the likelihood function is too computationally expensive to evaluate.  It replaces the likelihood function in the usual set-up for Bayesian inference with a different measure of how well a set of parameters match the observed data.  It might be possible to use this framework for parameter estimation in SARIMA models.
+
+A part of this project could involve exploration of the effects on parameter estimation of different measures of how well a set of parameter values matches the observed data in the ABC setup.
+
+Application areas:
+
+This could definitely be applied to a data set like influenza in the United States, but could also be applied to other time series data.
+
+Prerequisites:
+
+ * Basic knowledge of R or Python
+ * Multiple regression at the level of Stat 242
+ * Either exposure to Bayesian methods, or probability
+ * Perseverance
+
+#### Hierarchical SARIMA models
+
+We often observe time series data in multiple spatial units at different scales.  For instance, for influenza in the United States, we observe disease incidence in a few large cities (New York and Chicago, possibly a few others), every state other than Florida, and at the regional and national levels.  What we would really like is to be able to make a set of forecasts at the state, regional, and national levels that are coherent (in the sense that the forecasts add up correctly) and make appropriate use of all the information available.  There are a lot of possible ways to do this.  One idea for getting started would be to see if we could apply the framework developed in [this paper](https://robjhyndman.com/publications/probhts/) to these data.
+
+Application areas:
+
+This could definitely be applied to a data set like influenza in the United States, but could also be applied to other time series data.
+
+Prerequisites:
+
+ * Basic knowledge of R or Python
+ * Multiple regression at the level of Stat 242
+ * Either exposure to Bayesian methods, or probability
+ * Perseverance
+
+### Copulas
+
+Copulas are one of the most common approaches to modeling the joint distribution of a random vector $(Y_1, \ldots, Y_D)$.  Our goal is to estimate a joint probability density function (pdf) $f(y_1, \ldots, y_D; \theta)$ or a joint cumulative distribution function (cdf) $F(y_1, \ldots, y_D; \theta)$.  In the previous sentence, $\theta$ is a vector of parameters describing the distributions of the random variables.  For example, if $(Y_1, \ldots, Y_D)$ is modelled as following a multivariate normal distribution, $\theta$ will include a mean and variance for each $Y_j$, as well as the correlations between them.
+
+To use copulas, we can imagine breaking down the estimation of the joint cdf $F(y_1, \ldots, y_D; \theta)$ into two stages (but note that in practice estimation of the two stages can be done either sequentially or in one big estimation procedure):
+
+1. Separately, estimate the **marginal distributions** for each individual random variable.  This will give us $D$ separate cdf estimates $\hat{F}_1(y_1 ; \phi_1), \ldots, \hat{F}_D(y_D; \phi_D)$.  For example, $\phi_1$ might include the estimated mean and variance for the first component of the random vector.
+
+2. Use a *copula* to tie those separate marginal distributions together into one big joint distribution:
+
+$$\hat{F}(y_1, \ldots, y_D ; \theta) = C(\hat{F}_1(y_1 ; \phi_1), \ldots, \hat{F}_D(y_D; \phi_D) ; \psi)$$
+
+Above, $C$ is the copula function.  Basically, it is a parametric model (with parameters $\psi$) that says how to calculate the joint cdf if I know the values of the marginal cdfs.  In other words, it is a model for the dependence structure of the $D$ individual random variables.  The full parameter vector $\theta$ includes the parameters $\phi_1, \ldots, \phi_D$ for the individual random variables (think of these as the separate means and variances for the individual random variablers $Y_1, \ldots, Y_D$) and the parameters $\psi$ tying those together (think of this as the correlations between the random variables).
+
+In 1996, [Li et al.](https://core.ac.uk/download/pdf/82199371.pdf) proposed an extension to copulas that they called linkages, which allow you to use a copula-like structure to combine multivariate marginal distributions instead of univariate marginal distributions.  For example, if $D = 6$, we might use the model
+
+$$\hat{F}(y_1, \ldots, y_6 ; \theta) = C(\hat{F}_{1,2}(y_1, y_2 ; \phi_{1,2}), \hat{F}_{3,4}(y_3, y_4 ; \phi_{3,4}), \hat{F}_{5,6}(y_{5,6}; \phi_{5,6}) ; \psi)$$
+
+That is, we first estimate the joint distribution of $Y_1$ and $Y_2$, the joint distribution of $Y_3$ and $Y_4$, and the joint distribution of $Y_5$ and $Y_6$, and then we combine those bivariate distribution estimates into a big joint distribution for all 6 of the random variables.
+
+In this set-up, I see two questions that should be explored:
+
+1. Is it possible to identify a "best" partition of the variables when using linkages?  For example, intead of the pairs above, would it be better to use
+
+$$\hat{F}(y_1, \ldots, y_6 ; \theta) = C(\hat{F}_{1,3}(y_1, y_3 ; \phi_{1,3}), \hat{F}_{4,5}(y_4, y_5 ; \phi_{4,5}), \hat{F}_{2,6}(y_{2,6}; \phi_{2,6}) ; \psi)$$
+
+or
+
+$$\hat{F}(y_1, \ldots, y_6 ; \theta) = C(\hat{F}_{1,5}(y_1, y_5 ; \phi_{1,5}), \hat{F}_{2,3}(y_2, y_3 ; \phi_{2,3}), \hat{F}_{4,6}(y_{4,6}; \phi_{4,6}) ; \psi)$$
+
+2. Could we build an ensemble of linkages using different partitions of the variables?  For example, could we do something like the following?
+
+\begin{align*}
+&\hat{F}(y_1, \ldots, y_6 ; \theta) = \frac{1}{3} C(\hat{F}_{1,2}(y_1, y_2 ; \phi_{1,2}), \hat{F}_{3,4}(y_3, y_4 ; \phi_{3,4}), \hat{F}_{5,6}(y_{5,6}; \phi_{5,6}) ; \psi) \\
+&\qquad + \frac{1}{3} C(\hat{F}_{1,3}(y_1, y_3 ; \phi_{1,3}), \hat{F}_{4,5}(y_4, y_5 ; \phi_{4,5}), \hat{F}_{2,6}(y_{2,6}; \phi_{2,6}) ; \psi) \\
+&\qquad + \frac{1}{3} C(\hat{F}_{1,5}(y_1, y_5 ; \phi_{1,5}), \hat{F}_{2,3}(y_2, y_3 ; \phi_{2,3}), \hat{F}_{4,6}(y_{4,6}; \phi_{4,6}) ; \psi)
+\end{align*}
+
+
+Application areas:
+
+This could definitely be applied to a data set like influenza in the United States, but could also be applied to other time series data.  In particular, copulas are very often used in economics (though whether or not that's a good idea is up for debate).
+
+Prerequisites:
+
+ * Basic knowledge of R or Python
+ * Probability
+ * Perseverance
+
+### Deep Learning for Physical Activity Classification
+
+Researchers in public health would like to have accurate, objective methods for classifying physical activity according to its type and intensity.  They could use these measures to refine our understanding of associations between physical activity or inactivity and health outcomes, or to assess the effectiveness of interventions designed to increase physical activity levels.  A common approach to doing this is through the use of accelerometers.  These devices are similar to a fitbit, but in scientific studies it is more common to use other devices that have published calibration results.
+
+The way these devices generally work is that they record accleration along each of three axes at a high frequency (often 80 or 100 times per second).  As statisticians, our goal is to take this signal of acceleration over time and use it to infer physical activity type.  We should be able to get access to data that came out of a recent study at UMass where people wore accelerometers as they went about their regular lives (I've been promised access, but haven't followed up on this - if you are thinking of working on this project let me know and I will follow up with the people who did the study.)  This data set contains the measurements from the accelerometer, as well as labels of what each person was doing at each point in time, notated by someone watching a video of the person.
+
+This project would explore using deep learning to classify the type and intensity of physical activity people are engaged in.
+
+Application areas:
+
+Physical activity classification.
+
+Prerequisites:
+
+ * Basic knowledge of R or Python
+ * Stat 242 required, Stat 340 preferred
+ * Perseverance

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Research</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Evan L. Ray</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="recommendations.html">Recommendations</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Research</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#sarima-models-for-infectious-disease">SARIMA Models for Infectious Disease</a><ul>
+<li><a href="#informative-prior-for-seasonality">Informative prior for seasonality</a></li>
+<li><a href="#predictive-sarima-models-via-approximate-bayesian-computation-abc">Predictive SARIMA models via approximate Bayesian computation (ABC)</a></li>
+<li><a href="#hierarchical-sarima-models">Hierarchical SARIMA models</a></li>
+</ul></li>
+<li><a href="#copulas">Copulas</a></li>
+<li><a href="#deep-learning-for-physical-activity-classification">Deep Learning for Physical Activity Classification</a></li>
+</ul>
+</div>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<div id="introduction" class="section level3">
+<h3>Introduction</h3>
+<p>My research so far has tended to fall near the machine learning end of statistics; I have primarily focused on methods for prediction and classification in time series data. In research related to infectious disease prediction, I work closely with the <a href="http://reichlab.io/">Reich Lab</a> in the Department of Biostatistics and Epidemiology at the University of Massachusetts, Amherst.</p>
+<p>Below, I’ll sketch a few ideas for research projects that are suitable for students at Mount Holyoke, broken down by topic area. All of these are “real” research projects in the sense that they have the potential to result in a publishable article. As with all research projects I have engaged in, these ideas are also a bit risky: there is the potential that the original concept for the project won’t “work” (that’s why it’s research - we don’t yet know for sure what the results will be). Resilience and determination will be required to see the project through to the end.</p>
+<p>If you are interested in conducting research on one of these topics, get in touch with me. We can have a conversation about your career goals and level of preparation, and go from there.</p>
+</div>
+<div id="sarima-models-for-infectious-disease" class="section level3">
+<h3>SARIMA Models for Infectious Disease</h3>
+<p><a href="https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average"><strong>S</strong>easonal <strong>A</strong>uto<strong>r</strong>egressive <strong>I</strong>ntegrated <strong>M</strong>oving <strong>A</strong>verage</a> (SARIMA) models are the most common model for time series data with regular seasonal trends. An example of time seris data with seasonal patterns is measurements of the incidence of influenza over time in the US: incidence regularly reaches a low point during the summer months and then peaks during the winter months. Despite their common use, there are still many unexplored ideas for working with SARIMA models. All of the ideas below involve inference for SARIMA models in the Bayesian framework. It would also be possible to take some of the ideas below and apply them to other common models for infectious disease, like the HHH4 model.</p>
+<div id="informative-prior-for-seasonality" class="section level4">
+<h4>Informative prior for seasonality</h4>
+<p>Roughly, the parameters of a SARIMA model specify a relationship between disease incidence at past times and disease incidence at the current time. A simplified version of a SARIMA model (specifically, this is an AR(p) model) is as below:</p>
+<span class="math display">\[\begin{equation}
+Y_{t} = \alpha_1 Y_{t-1} + \alpha_2 Y_{t-2} + \cdots + \alpha_L Y_{t-p} + \varepsilon_t \label{eqn:AR_p}
+\end{equation}\]</span>
+<p>Here, the disease incidence at time <span class="math inline">\(t\)</span>, <span class="math inline">\(Y_t\)</span>, depends on the disease incidence over the past <span class="math inline">\(p\)</span> times. Certain sets of values for the parameters <span class="math inline">\(\alpha_1, \ldots, \alpha_p\)</span> will result in the seasonal up-and-down behavior we expect to represent a seasonal time series process.</p>
+<p>If we have enough data and we specify the model structure well, it will often be possible to learn the seasonal structure of the time series from the observed data. However, I have observed that sometimes automatic model selection strategies can fail to correctly find the seasonal structure in time series.</p>
+<p>The basic idea for this project is to perform inference for the model parameters in the Bayesian framework, specifying a prior distribution for the coefficients <span class="math inline">\(\alpha_1, \ldots, \alpha_p\)</span> in a Bayesian analysis that encourages the correct seasonal behavior. This should be possible because there is a known relationship between the values of the coefficients and the frequency of the up-and-down cycles that would be most noticeable in time series generated from a model with those coefficient values. Some references to get started with are <a href="https://en.wikipedia.org/wiki/Spectral_density_estimation#Parametric_estimation">here</a>.</p>
+<p>Application areas:</p>
+<p>This could definitely be applied to a data set like influenza in the United States, but could likely also be applied to other seasonal or periodic time series data.</p>
+<p>Prerequisites:</p>
+<ul>
+<li>Basic knowledge of R or Python</li>
+<li>Multiple regression at the level of Stat 242</li>
+<li>Calculus 3</li>
+<li>Either exposure to Bayesian methods, or probability</li>
+<li>Perseverance</li>
+</ul>
+</div>
+<div id="predictive-sarima-models-via-approximate-bayesian-computation-abc" class="section level4">
+<h4>Predictive SARIMA models via approximate Bayesian computation (ABC)</h4>
+<p>A common goal when fitting SARIMA models is to use them for making medium-to-long term predictions. However, the most common way of setting up the model structure and performing inference for the model parameters is tuned to short term predictions. The basic goal for this project is to explore whether we can improve medium-to-long term predictions from SARIMA models by directly using measures of medium-to-long term predictive performance during the parameter estimation process.</p>
+<p>ARIMA and SARIMA models are most often specified in a one-step-ahead fashion; for example, Equation (1) says that the time series value at time <span class="math inline">\(t\)</span> depends on the time series value at time <span class="math inline">\(t-1\)</span> (as well as previous lags). As a result of this model structure, the model likelihood basically measures the quality of one-step-ahead predictions (if I have observed the data up through time <span class="math inline">\(t-1\)</span>, how well can I predict the data at time <span class="math inline">\(t\)</span>). Estimation of the parameters in both the frequentist and Bayesian frameworks is based on the likelihood function, and so the most common approaches to parameter estimation are basically optimizing the performance of one-step-ahead predictions. I conjecture that changing the parameter estimation strategy to optimize performance of medium-to-long term predictions could improve predictive performance for many common use cases.</p>
+<p><a href="https://en.wikipedia.org/wiki/Approximate_Bayesian_computation">Approximate Bayesian computation</a> (ABC) is an approach to inference in the Bayesian framework that was originally developed for the setting where the likelihood function is too computationally expensive to evaluate. It replaces the likelihood function in the usual set-up for Bayesian inference with a different measure of how well a set of parameters match the observed data. It might be possible to use this framework for parameter estimation in SARIMA models.</p>
+<p>A part of this project could involve exploration of the effects on parameter estimation of different measures of how well a set of parameter values matches the observed data in the ABC setup.</p>
+<p>Application areas:</p>
+<p>This could definitely be applied to a data set like influenza in the United States, but could also be applied to other time series data.</p>
+<p>Prerequisites:</p>
+<ul>
+<li>Basic knowledge of R or Python</li>
+<li>Multiple regression at the level of Stat 242</li>
+<li>Either exposure to Bayesian methods, or probability</li>
+<li>Perseverance</li>
+</ul>
+</div>
+<div id="hierarchical-sarima-models" class="section level4">
+<h4>Hierarchical SARIMA models</h4>
+<p>We often observe time series data in multiple spatial units at different scales. For instance, for influenza in the United States, we observe disease incidence in a few large cities (New York and Chicago, possibly a few others), every state other than Florida, and at the regional and national levels. What we would really like is to be able to make a set of forecasts at the state, regional, and national levels that are coherent (in the sense that the forecasts add up correctly) and make appropriate use of all the information available. There are a lot of possible ways to do this. One idea for getting started would be to see if we could apply the framework developed in <a href="https://robjhyndman.com/publications/probhts/">this paper</a> to these data.</p>
+<p>Application areas:</p>
+<p>This could definitely be applied to a data set like influenza in the United States, but could also be applied to other time series data.</p>
+<p>Prerequisites:</p>
+<ul>
+<li>Basic knowledge of R or Python</li>
+<li>Multiple regression at the level of Stat 242</li>
+<li>Either exposure to Bayesian methods, or probability</li>
+<li>Perseverance</li>
+</ul>
+</div>
+</div>
+<div id="copulas" class="section level3">
+<h3>Copulas</h3>
+<p>Copulas are one of the most common approaches to modeling the joint distribution of a random vector <span class="math inline">\((Y_1, \ldots, Y_D)\)</span>. Our goal is to estimate a joint probability density function (pdf) <span class="math inline">\(f(y_1, \ldots, y_D; \theta)\)</span> or a joint cumulative distribution function (cdf) <span class="math inline">\(F(y_1, \ldots, y_D; \theta)\)</span>. In the previous sentence, <span class="math inline">\(\theta\)</span> is a vector of parameters describing the distributions of the random variables. For example, if <span class="math inline">\((Y_1, \ldots, Y_D)\)</span> is modelled as following a multivariate normal distribution, <span class="math inline">\(\theta\)</span> will include a mean and variance for each <span class="math inline">\(Y_j\)</span>, as well as the correlations between them.</p>
+<p>To use copulas, we can imagine breaking down the estimation of the joint cdf <span class="math inline">\(F(y_1, \ldots, y_D; \theta)\)</span> into two stages (but note that in practice estimation of the two stages can be done either sequentially or in one big estimation procedure):</p>
+<ol style="list-style-type: decimal">
+<li><p>Separately, estimate the <strong>marginal distributions</strong> for each individual random variable. This will give us <span class="math inline">\(D\)</span> separate cdf estimates <span class="math inline">\(\hat{F}_1(y_1 ; \phi_1), \ldots, \hat{F}_D(y_D; \phi_D)\)</span>. For example, <span class="math inline">\(\phi_1\)</span> might include the estimated mean and variance for the first component of the random vector.</p></li>
+<li><p>Use a <em>copula</em> to tie those separate marginal distributions together into one big joint distribution:</p></li>
+</ol>
+<p><span class="math display">\[\hat{F}(y_1, \ldots, y_D ; \theta) = C(\hat{F}_1(y_1 ; \phi_1), \ldots, \hat{F}_D(y_D; \phi_D) ; \psi)\]</span></p>
+<p>Above, <span class="math inline">\(C\)</span> is the copula function. Basically, it is a parametric model (with parameters <span class="math inline">\(\psi\)</span>) that says how to calculate the joint cdf if I know the values of the marginal cdfs. In other words, it is a model for the dependence structure of the <span class="math inline">\(D\)</span> individual random variables. The full parameter vector <span class="math inline">\(\theta\)</span> includes the parameters <span class="math inline">\(\phi_1, \ldots, \phi_D\)</span> for the individual random variables (think of these as the separate means and variances for the individual random variablers <span class="math inline">\(Y_1, \ldots, Y_D\)</span>) and the parameters <span class="math inline">\(\psi\)</span> tying those together (think of this as the correlations between the random variables).</p>
+<p>In 1996, <a href="https://core.ac.uk/download/pdf/82199371.pdf">Li et al.</a> proposed an extension to copulas that they called linkages, which allow you to use a copula-like structure to combine multivariate marginal distributions instead of univariate marginal distributions. For example, if <span class="math inline">\(D = 6\)</span>, we might use the model</p>
+<p><span class="math display">\[\hat{F}(y_1, \ldots, y_6 ; \theta) = C(\hat{F}_{1,2}(y_1, y_2 ; \phi_{1,2}), \hat{F}_{3,4}(y_3, y_4 ; \phi_{3,4}), \hat{F}_{5,6}(y_{5,6}; \phi_{5,6}) ; \psi)\]</span></p>
+<p>That is, we first estimate the joint distribution of <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span>, the joint distribution of <span class="math inline">\(Y_3\)</span> and <span class="math inline">\(Y_4\)</span>, and the joint distribution of <span class="math inline">\(Y_5\)</span> and <span class="math inline">\(Y_6\)</span>, and then we combine those bivariate distribution estimates into a big joint distribution for all 6 of the random variables.</p>
+<p>In this set-up, I see two questions that should be explored:</p>
+<ol style="list-style-type: decimal">
+<li>Is it possible to identify a “best” partition of the variables when using linkages? For example, intead of the pairs above, would it be better to use</li>
+</ol>
+<p><span class="math display">\[\hat{F}(y_1, \ldots, y_6 ; \theta) = C(\hat{F}_{1,3}(y_1, y_3 ; \phi_{1,3}), \hat{F}_{4,5}(y_4, y_5 ; \phi_{4,5}), \hat{F}_{2,6}(y_{2,6}; \phi_{2,6}) ; \psi)\]</span></p>
+<p>or</p>
+<p><span class="math display">\[\hat{F}(y_1, \ldots, y_6 ; \theta) = C(\hat{F}_{1,5}(y_1, y_5 ; \phi_{1,5}), \hat{F}_{2,3}(y_2, y_3 ; \phi_{2,3}), \hat{F}_{4,6}(y_{4,6}; \phi_{4,6}) ; \psi)\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Could we build an ensemble of linkages using different partitions of the variables? For example, could we do something like the following?</li>
+</ol>
+<span class="math display">\[\begin{align*}
+&amp;\hat{F}(y_1, \ldots, y_6 ; \theta) = \frac{1}{3} C(\hat{F}_{1,2}(y_1, y_2 ; \phi_{1,2}), \hat{F}_{3,4}(y_3, y_4 ; \phi_{3,4}), \hat{F}_{5,6}(y_{5,6}; \phi_{5,6}) ; \psi) \\
+&amp;\qquad + \frac{1}{3} C(\hat{F}_{1,3}(y_1, y_3 ; \phi_{1,3}), \hat{F}_{4,5}(y_4, y_5 ; \phi_{4,5}), \hat{F}_{2,6}(y_{2,6}; \phi_{2,6}) ; \psi) \\
+&amp;\qquad + \frac{1}{3} C(\hat{F}_{1,5}(y_1, y_5 ; \phi_{1,5}), \hat{F}_{2,3}(y_2, y_3 ; \phi_{2,3}), \hat{F}_{4,6}(y_{4,6}; \phi_{4,6}) ; \psi)
+\end{align*}\]</span>
+<p>Application areas:</p>
+<p>This could definitely be applied to a data set like influenza in the United States, but could also be applied to other time series data. In particular, copulas are very often used in economics (though whether or not that’s a good idea is up for debate).</p>
+<p>Prerequisites:</p>
+<ul>
+<li>Basic knowledge of R or Python</li>
+<li>Probability</li>
+<li>Perseverance</li>
+</ul>
+</div>
+<div id="deep-learning-for-physical-activity-classification" class="section level3">
+<h3>Deep Learning for Physical Activity Classification</h3>
+<p>Researchers in public health would like to have accurate, objective methods for classifying physical activity according to its type and intensity. They could use these measures to refine our understanding of associations between physical activity or inactivity and health outcomes, or to assess the effectiveness of interventions designed to increase physical activity levels. A common approach to doing this is through the use of accelerometers. These devices are similar to a fitbit, but in scientific studies it is more common to use other devices that have published calibration results.</p>
+<p>The way these devices generally work is that they record accleration along each of three axes at a high frequency (often 80 or 100 times per second). As statisticians, our goal is to take this signal of acceleration over time and use it to infer physical activity type. We should be able to get access to data that came out of a recent study at UMass where people wore accelerometers as they went about their regular lives (I’ve been promised access, but haven’t followed up on this - if you are thinking of working on this project let me know and I will follow up with the people who did the study.) This data set contains the measurements from the accelerometer, as well as labels of what each person was doing at each point in time, notated by someone watching a video of the person.</p>
+<p>This project would explore using deep learning to classify the type and intensity of physical activity people are engaged in.</p>
+<p>Application areas:</p>
+<p>Physical activity classification.</p>
+<p>Prerequisites:</p>
+<ul>
+<li>Basic knowledge of R or Python</li>
+<li>Stat 242 required, Stat 340 preferred</li>
+<li>Perseverance</li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
