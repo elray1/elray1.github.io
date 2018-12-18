@@ -29,7 +29,7 @@ If you are interested in conducting research on one of these topics, get in touc
 Roughly, the parameters of a SARIMA model specify a relationship between disease incidence at past times and disease incidence at the current time.  A simplified version of a SARIMA model (specifically, this is an AR(p) model) is as below:
 
 \begin{equation}
-Y_{t} = \alpha_1 Y_{t-1} + \alpha_2 Y_{t-2} + \cdots + \alpha_L Y_{t-p} + \varepsilon_t \label{eqn:AR_p}
+Y_{t} = \alpha_1 Y_{t-1} + \alpha_2 Y_{t-2} + \cdots + \alpha_p Y_{t-p} + \varepsilon_t \label{eqn:AR_p}
 \end{equation}
 
 Here, the disease incidence at time $t$, $Y_t$, depends on the disease incidence over the past $p$ times.  Certain sets of values for the parameters $\alpha_1, \ldots, \alpha_p$ will result in the seasonal up-and-down behavior we expect to represent a seasonal time series process.

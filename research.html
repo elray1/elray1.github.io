@@ -233,7 +233,7 @@ MathJax.Hub.Config({
 <h4>Informative prior for seasonality</h4>
 <p>Roughly, the parameters of a SARIMA model specify a relationship between disease incidence at past times and disease incidence at the current time. A simplified version of a SARIMA model (specifically, this is an AR(p) model) is as below:</p>
 <span class="math display">\[\begin{equation}
-Y_{t} = \alpha_1 Y_{t-1} + \alpha_2 Y_{t-2} + \cdots + \alpha_L Y_{t-p} + \varepsilon_t \label{eqn:AR_p}
+Y_{t} = \alpha_1 Y_{t-1} + \alpha_2 Y_{t-2} + \cdots + \alpha_p Y_{t-p} + \varepsilon_t \label{eqn:AR_p}
 \end{equation}\]</span>
 <p>Here, the disease incidence at time <span class="math inline">\(t\)</span>, <span class="math inline">\(Y_t\)</span>, depends on the disease incidence over the past <span class="math inline">\(p\)</span> times. Certain sets of values for the parameters <span class="math inline">\(\alpha_1, \ldots, \alpha_p\)</span> will result in the seasonal up-and-down behavior we expect to represent a seasonal time series process.</p>
 <p>If we have enough data and we specify the model structure well, it will often be possible to learn the seasonal structure of the time series from the observed data. However, I have observed that sometimes automatic model selection strategies can fail to correctly find the seasonal structure in time series.</p>
