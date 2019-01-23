@@ -8,21 +8,21 @@ I am an assistant professor of statistics in the [department of mathematics and 
 
 ## Teaching
 
-### Current:
+### Current
 
 [Stat 242: Intermediate Statistics](http://www.evanlray.com/stat242_s2019/)
 
 [Stat 343: Mathematical Statistics](http://www.evanlray.com/stat343_s2019/)
 
-### Previous:
+### Previous
 
-### Fall 2018:
+#### Fall 2018
 
 Stat 140: Introduction to the Ideas and Applications of Statistics
 
 Stat 340: Applied Regression
 
-### Spring 2018:
+#### Spring 2018
 
 Stat 140: Introduction to the Ideas and Applications of Statistics
 
