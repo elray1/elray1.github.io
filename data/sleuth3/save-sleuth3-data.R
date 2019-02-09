@@ -8,3 +8,4 @@ write.csv(Sleuth3::case0202, "data/sleuth3/ex0202_twins_schizophrenia.csv", row.
 write.csv(Sleuth3::ex0112, "data/sleuth3/ex0112_oil_diets.csv", row.names = FALSE)
 write.csv(Sleuth3::ex0223, "data/sleuth3/ex0223_highway_safety.csv", row.names = FALSE)
 write.csv(Sleuth3::case0502, "data/sleuth3/ex0502_women_jurors.csv", row.names = FALSE)
+write.csv(Sleuth3::case0601, "data/sleuth3/ex0601_handicaps.csv", row.names = FALSE)
