@@ -11,6 +11,7 @@ write.csv(Sleuth3::ex0223, "data/sleuth3/ex0223_highway_safety.csv", row.names =
 write.csv(Sleuth3::case0301, "data/sleuth3/case0301_cloud_seeding.csv", row.names = FALSE)
 write.csv(Sleuth3::ex0323, "data/sleuth3/ex0323_skin_cancer.csv", row.names = FALSE)
 write.csv(Sleuth3::case0502, "data/sleuth3/ex0502_women_jurors.csv", row.names = FALSE)
+write.csv(Sleuth3::case0501, "data/sleuth3/ex0501_longevity.csv", row.names = FALSE)
 write.csv(Sleuth3::ex0518, "data/sleuth3/ex0518_fatty_acid.csv", row.names = FALSE)
 write.csv(Sleuth3::ex0523, "data/sleuth3/ex0523_trex.csv", row.names = FALSE)
 write.csv(Sleuth3::ex0525, "data/sleuth3/ex0525_education_income.csv", row.names = FALSE)
