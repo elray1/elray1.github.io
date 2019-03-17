@@ -16,4 +16,5 @@ write.csv(Sleuth3::ex0518, "data/sleuth3/ex0518_fatty_acid.csv", row.names = FAL
 write.csv(Sleuth3::ex0523, "data/sleuth3/ex0523_trex.csv", row.names = FALSE)
 write.csv(Sleuth3::ex0525, "data/sleuth3/ex0525_education_income.csv", row.names = FALSE)
 write.csv(Sleuth3::case0601, "data/sleuth3/case0601_handicaps.csv", row.names = FALSE)
+write.csv(Sleuth3::ex0726, "data/sleuth3/ex0726_galton_regression.csv", row.names = FALSE)
 write.csv(Sleuth3::ex0728, "data/sleuth3/ex0728_string_instruments_brain_activity.csv", row.names = FALSE)
