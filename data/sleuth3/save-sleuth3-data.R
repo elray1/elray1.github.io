@@ -18,3 +18,6 @@ write.csv(Sleuth3::ex0525, "data/sleuth3/ex0525_education_income.csv", row.names
 write.csv(Sleuth3::case0601, "data/sleuth3/case0601_handicaps.csv", row.names = FALSE)
 write.csv(Sleuth3::ex0726, "data/sleuth3/ex0726_galton_regression.csv", row.names = FALSE)
 write.csv(Sleuth3::ex0728, "data/sleuth3/ex0728_string_instruments_brain_activity.csv", row.names = FALSE)
+write.csv(Sleuth3::case0801, "data/sleuth3/case0801_island_species.csv", row.names = FALSE)
+write.csv(Sleuth3::ex0817, "data/sleuth3/ex0817_pest_control.csv", row.names = FALSE)
+
