@@ -21,5 +21,5 @@ write.csv(Sleuth3::ex0728, "data/sleuth3/ex0728_string_instruments_brain_activit
 write.csv(Sleuth3::case0801, "data/sleuth3/case0801_island_species.csv", row.names = FALSE)
 write.csv(Sleuth3::ex0817, "data/sleuth3/ex0817_pest_control.csv", row.names = FALSE)
 write.csv(Sleuth3::ex0824, "data/sleuth3/ex0824_respiratory_rates.csv", row.names = FALSE)
-write.csv(Sleuth3::ex0824, "data/sleuth3/ex0826_2000_election.csv", row.names = FALSE)
+write.csv(Sleuth3::ex0826, "data/sleuth3/ex0826_2000_election.csv", row.names = FALSE)
 
