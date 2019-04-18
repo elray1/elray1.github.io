@@ -23,6 +23,6 @@ write.csv(Sleuth3::ex0817, "data/sleuth3/ex0817_pest_control.csv", row.names = F
 write.csv(Sleuth3::ex0824, "data/sleuth3/ex0824_respiratory_rates.csv", row.names = FALSE)
 write.csv(Sleuth3::ex0825, "data/sleuth3/ex0825_2000_election.csv", row.names = FALSE)
 write.csv(Sleuth3::case0901, "data/sleuth3/case0901_meadowfoam.csv", row.names = FALSE)
+write.csv(Sleuth3::ex0914, "data/sleuth3/ex0914_pace_of_life.csv", row.names = FALSE)
 write.csv(Sleuth3::ex1124, "data/sleuth3/ex1124_natal_dispersion.csv", row.names = FALSE)
 write.csv(Sleuth3::ex1319, "data/sleuth3/ex1319_nature_nurture.csv", row.names = FALSE)
-
