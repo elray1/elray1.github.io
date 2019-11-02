@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -69,9 +70,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -85,7 +84,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -190,8 +188,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -248,20 +244,17 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -304,6 +297,7 @@ $(document).ready(function () {
 <div id="about" class="section level2">
 <h2>About</h2>
 <p>I am an assistant professor of statistics in the <a href="https://www.mtholyoke.edu/acad/math">department of mathematics and statistics</a> at <a href="https://www.mtholyoke.edu">Mount Holyoke College</a>. I completed my PhD in statistics at the University of Massachusetts, Amherst. In various research projects, I have developed methods to classify physical activity using accelerometer data and developed semi-parametric and ensemble models for predicting the timing and severity of the spread of infectious disease. I work closely with the <a href="http://reichlab.io/">Reich Lab</a> in the Department of Biostatistics and Epidemiology at the University of Massachusetts, Amherst.</p>
+<p>Here is my CV: <a href="Evan_L_Ray_CV.pdf">pdf</a></p>
 </div>
 <div id="teaching" class="section level2">
 <h2>Teaching</h2>
@@ -340,9 +334,9 @@ $(document).ready(function () {
 <p>Evan L. Ray<br />
 404C Clapp Laboratory<br />
 Mount Holyoke College<br />
-50 College St.<br />
-South Hadley, MA 01075</p>
-<p><a href="mailto:eray@mtholyoke.edu">eray@mtholyoke.edu</a></p>
+50 College<br />
+St. South Hadley, MA 01075</p>
+<p><a href="mailto:eray@mtholyoke.edu" class="email">eray@mtholyoke.edu</a></p>
 </div>
 
 
@@ -362,6 +356,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
