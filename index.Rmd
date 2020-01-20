@@ -12,12 +12,18 @@ Here is my CV: [pdf](Evan_L_Ray_CV.pdf)
 
 ### Current
 
-[Stat 242: Intermediate Statistics](http://www.evanlray.com/stat242_f2019/)
+[Stat 343: Mathematical Statistics](http://www.evanlray.com/stat343_s2020/)
 
-[Stat 340: Topics in Applied Regression](http://www.evanlray.com/stat340_f2019/)
+[Stat 344ne: Introduction to Neural Networks](http://www.evanlray.com/stat344ne_s2020/)
 
 
 ### Previous
+
+#### Fall 2019
+
+Stat 242: Intermediate Statistics
+
+Stat 340: Topics in Applied Regression
 
 #### Spring 2019
 
