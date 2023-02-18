@@ -4,11 +4,13 @@ title: "Evan L. Ray"
 
 ## About
 
-I am an assistant professor of statistics in the [department of mathematics and statistics](https://www.mtholyoke.edu/acad/math) at [Mount Holyoke College](https://www.mtholyoke.edu).  I completed my PhD in statistics at the University of Massachusetts, Amherst.  In various research projects, I have developed methods to classify physical activity using accelerometer data and developed semi-parametric and ensemble models for predicting the timing and severity of the spread of infectious disease.  I work closely with the [Reich Lab](http://reichlab.io/) in the Department of Biostatistics and Epidemiology at the University of Massachusetts, Amherst.
+I am a research assistant professor of biostatistics in the [Department of Biostatistics and Epidemiology](https://www.umass.edu/public-health-sciences/academics/departments/biostatistics-and-epidemiology) at the University of Massachusetts, Amherst. Along with [Dr. Nick Reich](http://reichlab.io/), I co-direct the [US COVID-19 Forecast Hub](https://covid19forecasthub.org/). In various research projects, I have developed methods to classify physical activity using accelerometer data and developed semi-parametric and ensemble models for predicting the timing and severity of the spread of infectious disease.
 
 Here is my CV: [pdf](Evan_L_Ray_CV.pdf)
 
 ## Teaching
+
+I do not teach formal courses in my current role; the information below is for courses I taught in my previous position at Mount Holyoke College.
 
 ### Current
 
@@ -46,13 +48,3 @@ Stat 343: Mathematical Statistics
 #### Fall 2017
 
 Stat 140: Introduction to the Ideas and Applications of Statistics
-
-## Contact
-
-Evan L. Ray  
-404C Clapp Laboratory  
-Mount Holyoke College  
-50 College St.  
-South Hadley, MA 01075
-
-eray@mtholyoke.edu
