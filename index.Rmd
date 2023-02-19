@@ -12,14 +12,11 @@ Here is my CV: [pdf](Evan_L_Ray_CV.pdf)
 
 I do not teach formal courses in my current role; the information below is for courses I taught in my previous position at Mount Holyoke College.
 
-### Current
+### Spring 2020
 
 [Stat 343: Mathematical Statistics](http://www.evanlray.com/stat343_s2020/)
 
 [Stat 344ne: Introduction to Neural Networks](http://www.evanlray.com/stat344ne_s2020/)
-
-
-### Previous
 
 #### Fall 2019
 
